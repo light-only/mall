@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% import 'macros.html' as macros %}
+
+{% block link %}
+<link rel="stylesheet" href="../public/css/list.css">
+{% endblock %}
+
+{% block content %}
+    <div class="all">
+        <div class="list-banner">
+            <a href="">{{category.name}}</a>
+        </div>
+        <div class="clearfix">
+            <ul class="clearfix">
+                {% for item in items.items %}
+                    <li class="list-content">
+                        <div class="list-box">
+                            <a href="/detail/{{item.id}}">
+                                <img src="../public/images/{{item.cover}}" alt="">
+                            </a>                           
+                        </div>
+                        <div class="list-title">
+                            <p><a href="/detail/{{item.id}}">{{item.name}}</a></p>
+                            <p>{{item.description}}</p>
+                            <p>{{item.price}}元</p>
+                        </div>
+                    </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="list-nav">
+            {{macros.pageination(items.pages,items.page)}}
+        </div>
+    </div>
+{% endblock%}

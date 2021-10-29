@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box{
+    margin: 0 180px;
+    
+}
+body{
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+
+}
+.banner{
+    text-align: center;
+    padding: 0 180px;
+    height: 120px;
+    line-height: 120px;
+    background-color: #fff;
+}
+.banner h3 {
+    float: left;
+    width: 65px;
+    height: 65px;
+    margin-top: 26px;
+    line-height: 66px;
+    background-color: #ff6700;
+}
+.banner h3 a{
+    color: #fff;
+}
+.banner h3 a:hover{
+    color: #000;
+}
+.banner-left ul li {
+    float: left;
+    margin: 0 15px;
+}
+.banner-right ul li{
+    float: right;
+    margin: 0 15px;
+}
+li{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+a:hover{
+    color: #ff6700;
+}
+
+.nav{
+    margin-top: 50px;
+    height: 300px;
+    background-color:#fff;
+}
+.nav-container{
+    padding: 40px 100px;
+}
+.nav-container dl{
+    float: left;
+    width: 160px;
+}
+
+.nav-container dl dt{
+    font-size: 12px;
+    margin: 5px 0;
+}
+.nav-container dl dt:first-child{
+    padding: 5px 0 10px 0;
+    font-size: 14px;
+}
+/* .clearfix:after{
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix{
+    zoom:1;
+} */
+.clearfix::before,.clearfix:after{
+    content:" ";
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+.list-nav{
+    margin-top: 20px;
+    text-align: center;
+}
+.list-nav a{
+    display: inline-block;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #ff6700;
+}
+#current{
+    color: #ff6700;
+    background-color: #fff;
+}
+.list-nav a:first-child,a:last-child{
+    width: 70px;
+}

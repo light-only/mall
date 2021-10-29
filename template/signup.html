@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="../public/css/signup.css">
+{% endblock %}
+
+
+{% block content %}
+    <div class="signup-content">
+        <div class="signup-banner">
+            <a href="">注册</a>
+        </div>
+        <div class="signup-form">
+            <form action="/signup" method="post">
+                <div class="signup-user">
+                    <span>用户名：</span>
+                    <input type="text" name="username">
+                </div>
+                <div class="signup-password">
+                    <span>密码：</span>
+                    <input type="password" name="password">
+                </div>
+                <div class="signup-mark">
+                    <span>确认密码：</span>
+                    <input type="password" name="repassword">
+                </div>               
+                <div class="commit">
+                    <button>注册</button>
+                    <a href="/signin">我有账号，立即登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock%}

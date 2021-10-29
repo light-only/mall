@@ -1,0 +1,56 @@
+@import './base.css';
+
+.signup-banner{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+.signup-banner a{
+    font-size: 18px;
+    font-weight: 700;
+}
+.signup-form{
+    padding: 40px 40px;
+    width: 100%;
+    height: 500px;
+    background-color: #fff;
+}
+.signup-form form>div{
+    margin-bottom: 30px;
+}
+.signup-form span{
+    font-size: 18px;
+}
+.signup-form input{
+    padding: 20px 20px;
+    width: 100%;
+    height: 20px;
+}
+.commit button{
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    background-color: #ff6700;
+    outline: none;
+    border: none;
+
+}
+.commit button:hover{
+    color: #000;
+}
+.commit a{
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    vertical-align: bottom;
+}
+.signup-current{
+    color: #ff6700;
+}
+

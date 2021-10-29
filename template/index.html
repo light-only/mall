@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+
+{% block link %}
+<link rel="stylesheet" href="../public//css/index.css">
+{% endblock %}
+
+
+
+{% block content %}
+<div class="centent">
+    {% for category in categoryItems %}
+    <div class="centent-banner clearfix">
+        <span>{{category.categoryName}}</span>
+        <span><a href="/list/{{category.categoryId}}">更多</a></span>
+    </div>
+    <div class="product clearfix">
+        <ul class="clearfix">
+            {% for item in category.items %}
+            <li>
+                <a href="/detail/{{item.id}}">
+                <img src="/public/images/{{item.cover}}" alt="{{item.name}}" class="product-img">
+                <p>{{item.name}}</p>
+                <p>{{item.description}}</p>
+                <p>{{item.price.toFixed(2)}}元</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+   {% endfor %}
+   
+</div>
+{% endblock %}

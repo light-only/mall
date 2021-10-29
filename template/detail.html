@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% import 'macros.html' as macros %}
+
+{% block link %}
+<link rel="stylesheet" href="../public/css/detail.css">
+{% endblock %}
+
+{% block content %}
+<div class="detail-content">
+    <div class="detail-banner">
+        <a href="">{{category.name}}</a>
+    </div>
+    <div class="detail-box">
+        <div class="detail-img">
+                <img src="../public//images/{{item.cover}}" alt="">
+        </div>
+        <div class="detail-title">
+            <h2>{{item.name}}</h2>
+            <p>{{item.price.toFixed(2)}}元</p>
+            <p>加入购物车</p>
+        </div>
+    </div>
+    <div class="intrudict">
+        介绍
+        <div>{{item.description}}</div>
+    </div>
+    <div class="comment">
+        <p class="c">评论</p>
+        <form action="/comment" method="post">
+            <textarea name="content" id="" cols="30" rows="10"></textarea>
+            <input type="hidden" name="itemId" value="{{item.id}}">
+            <button>提交</button>
+        </form>
+            <div class="comment-user">
+                {% for comment in comments.comments %}
+                <div>
+                    {% if comment.avatar == '' %}
+                    <img src="../public//images/user-avatar.png" alt="">
+                    {% else %}
+                    <img src="../{{comment.avatar}}" alt="">
+                    {% endif %}
+                    <div class="comment-time">
+                        <span>{{comment.username}}</span><br>
+                        <span>{{comment.createAt}}</span>
+                    </div>
+                    <p>
+                       {{comment.comment}}
+                    </p>
+                </div>
+                {% endfor %}
+                <div class="list-nav">
+                    {{macros.pageination(comments.pages,comments.page)}}
+                </div>
+            </div>
+
+       
+    </div>
+</div>
+{% endblock%}

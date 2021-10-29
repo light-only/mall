@@ -1,0 +1,61 @@
+
+@import './base.css';
+
+
+.centent{
+    position: relative;
+    /* height: 1500px; */
+    background-color:#f5f5f5;
+}
+.centent-banner{
+    padding-top: 10px;
+}
+.centent-banner span:first-child{
+    float: left;
+    font-size: 20px;
+    
+}
+.centent-banner span:last-child{
+    float: right;
+}
+
+.product ul li{
+    margin-top: 20px;
+    float: left;
+    width: 215px;
+    height: 260px;
+    text-align: center;
+    margin-right: 21px;
+    background-color: #fff;
+    transition: all 0.2s linear;
+}
+.product ul li:hover{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0, -2px, 0);
+}
+.product ul li:last-child{
+    margin-right: 0;
+}
+
+.product-img{
+    width: 160px;
+    height: 160px;
+}
+
+.product ul li p:nth-child(3){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.product ul li p:nth-child(2){
+    font-size: 14px;
+    margin: 10px 0 2px 0;
+}
+.product ul li p:nth-child(4){
+    margin: 10px 0 14px 0;
+    font-size: 14px;
+    color: #ff6700;
+}
+

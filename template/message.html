@@ -1,0 +1,18 @@
+{%extends 'layout.html' %}
+
+{%block link%}
+<link rel="stylesheet" href="/public/css/message.css" />
+{%endblock%}
+
+{%block content%}
+<div class="message-content">
+    <div class="message-banner">提示</div>
+    <div class="message-title">
+        <div>{{message}}</div>
+        {% for reason in reasons %}
+        <div>{{reason}}</div>
+        {% endfor %}
+        <div><a href="{{url}}">点击这里跳转</a></div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,59 @@
+{%extends 'layout.html' %}
+
+{%block link%}
+<link rel="stylesheet" href="/public/css/user.css" />
+{%endblock%}
+
+{%block content%}
+    <div class="user-content">
+        <div class="user-banner"></div>
+        <div class="user-box">
+            <div class="user-left">
+                <h3>账户管理</h3>
+                <div>
+                    <a href="">用户信息</a>
+                    <a href="">修改密码</a>
+                </div>
+            </div>
+            <div class="user-right">
+                <div class="user-avatar">
+                    {% if user.avatar != '' %}
+                    <div class="user-a"">
+                        <img src="{{user.avatar}}" alt="">
+                    </div>
+                    {% else %}
+                    <div class="user-a" style="background-image: url('/public/images/user-avatar.png');"></div>
+                    {% endif %}
+                    <div class="user-edit" id="avatar-edit"></div>
+                    <form action="/avatar" method="post" id="avatar-form" style="display:none" enctype="multipart/form-data">
+                        <input type="file" id="avatar" name="avatar">
+                    </form>
+                </div>
+                <div class="user-message">
+                    <h3>基础资料</h3>
+                    <div>
+                        <span>姓名:</span>
+                        <span>{{user.username}}</span>
+                    </div>
+                    <div>
+                        <span>性别:</span>
+                        <span>男</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    let avatarElement = document.querySelector('#avatar');
+    let avatarFormElement = document.querySelector('#avatar-form');
+    let avatarEditElement = document.querySelector('#avatar-edit');
+
+    avatarEditElement.onclick = function(){
+        avatarElement.click();
+    };
+    avatarElement.onchange = function(){
+        avatarFormElement.submit();
+    }
+</script>
+{%endblock%}
